@@ -1,8 +1,11 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import { ContextApp } from '../context/ContextProvider';
 import HeroCard from './HeroCard';
-import HeroScreen from './HeroScreen'
 
-const HeroList = ({ superHeroData }) => {
+
+const HeroList = () => {
+
+    const {superHeroData} = useContext(ContextApp);
 
     return (
         <div className="row">

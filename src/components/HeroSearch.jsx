@@ -1,6 +1,10 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import { ContextApp } from '../context/ContextProvider';
 
-const HeroSearch = ({onChange, searchText}) => {
+const HeroSearch = () => {
+
+    const {onChange, searchText} = useContext(ContextApp);
+
     return (
         <div>
             <nav className="navbar navbar-light bg-light">

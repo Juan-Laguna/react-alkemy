@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+
 
 const HeroCard = ({ superHero }) => {
 
@@ -12,13 +12,13 @@ const HeroCard = ({ superHero }) => {
 
         // console.log(`id${id}, nombre:${name}`);
         // const currentSuperHero = superHero ;
-        debugger
-        setteam([
-            ...team,
+        // debugger
+        setteam(
+           [...team,
             team
-        ]);
+           ])
 
-        console.log(team);
+        console.log(superHero);
     }
 
     return (
