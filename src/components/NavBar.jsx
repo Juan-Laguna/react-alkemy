@@ -1,6 +1,6 @@
-import React, {useContext} from 'react';
+import React  from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { AuthContext } from '../auth/AuthContext';
+
 
 const NavBar = () => {
 
@@ -35,7 +35,7 @@ const NavBar = () => {
                 <ul className="navbar-nav ml-auto">
 
                     <span className="nav-item nav-link text-info">
-                        Susana
+                        
                     </span>
 
                     <NavLink

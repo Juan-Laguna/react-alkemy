@@ -1,30 +1,28 @@
 
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { ContextApp } from '../context/ContextProvider';
 
 
 const HeroCard = ({ superHero }) => {
 
+    const {team, setteam} = useContext(ContextApp);
+
     const { id, name, image, powerstats, biography } = superHero;
 
-    const [team, setteam] = useState([]);
-
     const handleClick = () => {
-
-        // console.log(`id${id}, nombre:${name}`);
-        // const currentSuperHero = superHero ;
-        // debugger
-        setteam(
-           [...team,
-            team
-           ])
-
+        setteam([
+                ...team,
+                superHero
+            ])
         console.log(superHero);
     }
+
 
     return (
         <>
             {/* <div className="container"> */}
-            <div className="row row-cols-1 row-cols-md-2 g-4" >
+            <div className="card" style={{ width: '18rem' }}>
                 <div className="col">
 
                     <img src={image.url} className="card-img-top" alt="superHero" />
@@ -39,6 +37,10 @@ const HeroCard = ({ superHero }) => {
                             <li className="list-group-item">Publisher: {biography.publisher}</li>
                         </ul>
                         <div className="card-body">
+                            <div>
+                                <Link to={`./hero/${id}`}>Ver mas...</Link>
+                            </div>
+                            <hr />
                             <button
                                 className="btn btn-danger"
                                 onClick={handleClick}

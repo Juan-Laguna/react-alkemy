@@ -12,6 +12,9 @@ const Provider = (props) => {
     const [searchText, setsearchText] = useState('');
     const [superHeroData, setsuperHeroData] = useState([]);
 
+   const [team, setteam] = useState([]);
+
+    
     const token = 10158842005488462;
 
     const searchSuperHeroes = async () => {
@@ -42,7 +45,9 @@ const Provider = (props) => {
             value={{
                 onChange,
                 searchText,
-                superHeroData
+                superHeroData,
+                team,
+                setteam
             }}
         >
             {props.children}

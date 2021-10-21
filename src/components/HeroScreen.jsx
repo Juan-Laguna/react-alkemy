@@ -1,32 +1,26 @@
-import React from 'react'
-import { useParams } from 'react-router'
+import React, {useContext} from 'react';
+import { ContextApp } from '../context/ContextProvider';
+import {useParams, Redirect} from 'react-router-dom';
 
-const HeroScreen = ({ superHeroData }) => {
+
+const HeroScreen = () => {
     
-    const { heroId } = useParams();
-
-
-    if (superHeroData.length > 3) {
-       
-        
-        const getHeroById = id => {
-            return superHeroData.find(hero => hero.id === id);
-        }
-
-        const hero = getHeroById(heroId)
-        
-        console.log(hero);
+    const {superHeroData} = useContext(ContextApp);
     
-    } else {
-        return null
+    const getHeroById = id => {
+    
+        return superHeroData.find( hero => hero.id === id);
     }
 
+    const {heroId} = useParams();
+    
+    const hero = getHeroById(heroId);
 
-
-   
-
-
-
+    if(!hero) {
+        return <Redirect to="/" />
+    }
+  
+    // const {id, name, image, powerstats, biography} = hero;
 
     return (
         <div>

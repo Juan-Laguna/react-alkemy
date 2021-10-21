@@ -2,7 +2,6 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import LoginScreen from '../components/LoginScreen';
 import HeroSearch from '../components/HeroSearch';
-import NotFoundPage from '../components/NotFoundPage';
 import DashboardRoute from './DashboardRoute';
 
 
@@ -14,7 +13,7 @@ const AppRouter = () => {
     <div>
       <Switch>
         <Route exact path="/login" component={LoginScreen} />
-        <Route exact path="/herosearch"> <HeroSearch /></Route>
+        <Route exact path="/herosearch" component={HeroSearch} />
         <Route path="/" component={DashboardRoute} />
       </Switch>
     </div>
