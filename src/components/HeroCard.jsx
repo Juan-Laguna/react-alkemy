@@ -6,17 +6,24 @@ import { ContextApp } from '../context/ContextProvider';
 
 const HeroCard = ({ superHero }) => {
 
-    const {team, setteam} = useContext(ContextApp);
+    const { team, setTeam } = useContext(ContextApp);
 
     const { id, name, image, powerstats, biography } = superHero;
 
+
+    console.log(team);
+
     const handleClick = () => {
-        setteam([
-                ...team,
-                superHero
-            ])
-        console.log(superHero);
+   
+        setTeam([
+            ...team,
+            superHero,
+        ])
+       
     }
+
+    console.log(team);
+
 
 
     return (
@@ -55,5 +62,4 @@ const HeroCard = ({ superHero }) => {
         </>
     )
 }
-
 export default HeroCard

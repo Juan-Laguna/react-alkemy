@@ -12,7 +12,7 @@ const Provider = (props) => {
     const [searchText, setsearchText] = useState('');
     const [superHeroData, setsuperHeroData] = useState([]);
 
-   const [team, setteam] = useState([]);
+    const [team, setTeam] = useState([]);
 
     
     const token = 10158842005488462;
@@ -47,7 +47,7 @@ const Provider = (props) => {
                 searchText,
                 superHeroData,
                 team,
-                setteam
+                setTeam
             }}
         >
             {props.children}
