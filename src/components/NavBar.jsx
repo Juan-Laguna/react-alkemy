@@ -24,6 +24,20 @@ const NavBar = () => {
                         activeClassName="active"
                         className="nav-item nav-link"
                         exact
+                        to="/"
+                    >
+                        Home
+                    </NavLink>
+                </div>
+            </div>
+
+
+             <div className="navbar-collapse">
+                <div className="navbar-nav">
+                    <NavLink
+                        activeClassName="active"
+                        className="nav-item nav-link"
+                        exact
                         to="/herosearch"
                     >
                         Search

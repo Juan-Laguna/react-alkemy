@@ -9,18 +9,14 @@ const HeroList = () => {
 
     return (
         <div className="row">
-            <h1>Super Heroes</h1>
-            <hr />
-            {superHeroData.map(superHero => (
-                <>
-                    {/* {console.log(superHero)} */}
+            {
+                superHeroData.map(superHero => (
                     <HeroCard
                         key={superHero.id}
                         superHero={superHero}
                     />
-
-                </>
-            ))}
+                ))
+            }
         </div>
     )
 }

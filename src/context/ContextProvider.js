@@ -1,6 +1,7 @@
-import react, {useState} from 'react';
+import { useState, useEffect } from 'react';
 import { createContext } from 'react';
 import axios from 'axios';
+import { Route } from 'react-router';
 
 // Crear el Context
 export const ContextApp = createContext();
@@ -14,9 +15,10 @@ const Provider = (props) => {
 
     const [team, setTeam] = useState([]);
 
-    
     const token = 10158842005488462;
 
+
+  
     const searchSuperHeroes = async () => {
         const response = await axios.get(`https://superheroapi.com/api/${token}/search/${searchText}`)
         // console.log(response.data.results)
@@ -36,6 +38,7 @@ const Provider = (props) => {
         if (searchText.length > 3) {
             searchSuperHeroes();
         }
+
     }
 
 
@@ -47,7 +50,7 @@ const Provider = (props) => {
                 searchText,
                 superHeroData,
                 team,
-                setTeam
+                setTeam,
             }}
         >
             {props.children}
